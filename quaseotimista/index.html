@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quase Otimista — R. Nunes</title>
+  <meta name="description" content="Uma filosofia pequena para uma vida que não se repete. Ensaio filosófico-existencial de R. Nunes. Kindle e PDF por R$9,90.">
+  <meta property="og:title" content="Quase Otimista — R. Nunes">
+  <meta property="og:description" content="Para quem perdeu o chão de uma certeza — e precisa aprender a andar numa superfície diferente.">
+  <meta property="og:type" content="book">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #1a2535;
+      color: #e8ecf1;
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .qo-hero {
+      min-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 2.5rem 3rem;
+      max-width: 700px;
+      margin: 0 auto;
+      border-bottom: 1px solid rgba(200,212,224,0.15);
+    }
+
+    .qo-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #c8d4e0;
+      opacity: 0.65;
+      margin-bottom: 2.5rem;
+    }
+
+    .qo-title-quase {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.2rem, 8vw, 5.5rem);
+      font-weight: 400;
+      color: #c8d4e0;
+      line-height: 1;
+      display: block;
+    }
+
+    .qo-title-otimista {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.2rem, 8vw, 5.5rem);
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 1;
+      display: block;
+    }
+
+    .qo-subtitle {
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      color: #c8d4e0;
+      opacity: 0.55;
+      margin-top: 1rem;
+      font-style: italic;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .qo-anchor {
+      font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+      line-height: 1.75;
+      color: #c8d4e0;
+      border-left: 2px solid rgba(200,212,224,0.3);
+      padding-left: 1.5rem;
+      margin: 2.5rem 0;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .qo-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      align-items: flex-start;
+    }
+
+    .qo-btn-primary {
+      background: #e8ecf1;
+      color: #1a2535;
+      padding: 0.85rem 2rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      transition: background 0.2s;
+    }
+
+    .qo-btn-primary:hover { background: #ffffff; }
+
+    .qo-btn-primary small {
+      font-size: 10px;
+      font-weight: 300;
+      opacity: 0.6;
+      letter-spacing: 0.06em;
+    }
+
+    .qo-btn-secondary {
+      background: transparent;
+      color: #c8d4e0;
+      padding: 0.85rem 2rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      border: 1px solid rgba(200,212,224,0.3);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .qo-btn-secondary:hover { border-color: rgba(200,212,224,0.7); color: #ffffff; }
+
+    .qo-btn-secondary small {
+      font-size: 10px;
+      font-weight: 300;
+      opacity: 0.5;
+      letter-spacing: 0.06em;
+    }
+
+    .qo-btn-ghost {
+      background: transparent;
+      color: #c8d4e0;
+      padding: 0.85rem 1.5rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      border: 1px dashed rgba(200,212,224,0.2);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .qo-btn-ghost:hover { border-color: rgba(200,212,224,0.5); color: #ffffff; }
+
+    .qo-section {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 4.5rem 2.5rem;
+      border-bottom: 1px solid rgba(200,212,224,0.1);
+    }
+
+    .qo-section-label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #c8d4e0;
+      opacity: 0.45;
+      margin-bottom: 2rem;
+    }
+
+    .qo-not-tag {
+      display: inline-block;
+      border: 1px solid rgba(200,212,224,0.2);
+      color: #c8d4e0;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      padding: 0.3rem 0.75rem;
+      margin: 0.3rem 0.3rem 0.3rem 0;
+      opacity: 0.6;
+    }
+
+    .qo-is-p {
+      font-size: 1.1rem;
+      color: #c8d4e0;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      margin-top: 1.5rem;
+      line-height: 1.8;
+    }
+
+    .qo-quote-block {
+      margin: 1.5rem 0;
+      padding: 1.5rem 0;
+      border-top: 1px solid rgba(200,212,224,0.1);
+    }
+
+    .qo-quote-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: #e8ecf1;
+      line-height: 1.8;
+      margin-bottom: 0.75rem;
+    }
+
+    .qo-quote-ref {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: #c8d4e0;
+      opacity: 0.45;
+      text-transform: uppercase;
+    }
+
+    .qo-movements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .qo-movement {
+      padding: 1.25rem;
+      border: 1px solid rgba(200,212,224,0.1);
+    }
+
+    .qo-movement-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #c8d4e0;
+      opacity: 0.2;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .qo-movement-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: #e8ecf1;
+      margin-bottom: 0.4rem;
+    }
+
+    .qo-movement-desc {
+      font-size: 12px;
+      color: #c8d4e0;
+      opacity: 0.55;
+      line-height: 1.6;
+    }
+
+    .qo-reviews-note {
+      font-size: 13px;
+      color: #c8d4e0;
+      opacity: 0.45;
+      font-style: italic;
+      text-align: center;
+      padding: 3rem 2.5rem;
+      border: 1px dashed rgba(200,212,224,0.15);
+      max-width: 400px;
+      margin: 2rem auto 0;
+    }
+
+    .qo-footer {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 3rem 2.5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    .qo-footer-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: #e8ecf1;
+      font-weight: 400;
+    }
+
+    .qo-footer-sub {
+      font-size: 12px;
+      color: #c8d4e0;
+      opacity: 0.4;
+      letter-spacing: 0.05em;
+    }
+
+    .qo-reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .qo-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 480px) {
+      .qo-hero { padding: 4rem 1.5rem 2.5rem; }
+      .qo-section { padding: 3rem 1.5rem; }
+      .qo-cta-group { flex-direction: column; }
+      .qo-btn-primary, .qo-btn-secondary { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="qo-hero">
+    <p class="qo-eyebrow">R. Nunes &nbsp;·&nbsp; Ensaio filosófico-existencial</p>
+    <div style="margin-bottom:2.5rem">
+      <span class="qo-title-quase">Quase</span>
+      <span class="qo-title-otimista">Otimista</span>
+      <p class="qo-subtitle">Uma filosofia pequena para uma vida que não se repete</p>
+    </div>
+    <blockquote class="qo-anchor">
+      "Se a dor existe, você está vivo. Enquanto houver chocolates, vale a pena viver."
+    </blockquote>
+    <div class="qo-cta-group">
+      <a class="qo-btn-primary" href="https://www.amazon.com.br/dp/B0H2WDTYC8" target="_blank">
+        Ler no Kindle — R$ 9,90
+        <small>Amazon · disponível no Kindle Unlimited</small>
+      </a>
+      <a class="qo-btn-secondary" href="https://hotmart.com/pt-br/marketplace/produtos/quase-otimista-raphael-nunes/G106063004A" target="_blank">
+        PDF — R$ 9,90
+        <small>Hotmart · leitura offline, sem Kindle</small>
+      </a>
+      <a class="qo-btn-ghost" href="#capitulo1">Ler o capítulo 1 — grátis</a>
+    </div>
+  </div>
+
+  <div class="qo-section qo-reveal">
+    <p class="qo-section-label">O que este livro não é</p>
+    <div>
+      <span class="qo-not-tag">Não é autoajuda</span>
+      <span class="qo-not-tag">Não é coaching</span>
+      <span class="qo-not-tag">Não é receita</span>
+      <span class="qo-not-tag">Não promete transformação</span>
+      <span class="qo-not-tag">Não evangeliza</span>
+    </div>
+    <p class="qo-is-p">
+      É companhia. Para quem perdeu o chão de uma certeza que sustentava tudo — e ainda não sabe como continuar sem fingir que sabe.
+    </p>
+  </div>
+
+  <div class="qo-section qo-reveal">
+    <p class="qo-section-label">Do livro</p>
+    <div class="qo-quote-block">
+      <p class="qo-quote-text">"Existe um lugar que muitas pessoas conhecem e que poucas nomeiam em voz alta: o lugar de quem perdeu o chão de uma certeza que sustentava tudo."</p>
+      <span class="qo-quote-ref">Movimento I — O Chão que Sumiu</span>
+    </div>
+    <div class="qo-quote-block">
+      <p class="qo-quote-text">"Sua vida e morte é algo que acontece, aconteceu e continuará acontecendo com bilhões de pessoas como você. Você não está sozinho nisso."</p>
+      <span class="qo-quote-ref">Movimento III — A Companhia dos Bilhões</span>
+    </div>
+    <div class="qo-quote-block">
+      <p class="qo-quote-text">"Nem otimismo, nem pessimismo, nem resignação. Uma postura sustentável — porque não exige certeza."</p>
+      <span class="qo-quote-ref">Movimento V — Quase Otimista</span>
+    </div>
+  </div>
+
+  <div class="qo-section qo-reveal">
+    <p class="qo-section-label">Cinco movimentos</p>
+    <div class="qo-movements-grid">
+      <div class="qo-movement">
+        <div class="qo-movement-num">I</div>
+        <div class="qo-movement-title">O Chão que Sumiu</div>
+        <div class="qo-movement-desc">Validar a dor sem dramatizá-la</div>
+      </div>
+      <div class="qo-movement">
+        <div class="qo-movement-num">II</div>
+        <div class="qo-movement-title">O Inventário do Real</div>
+        <div class="qo-movement-desc">Redirecionar a atenção para o que está</div>
+      </div>
+      <div class="qo-movement">
+        <div class="qo-movement-num">III</div>
+        <div class="qo-movement-title">A Companhia dos Bilhões</div>
+        <div class="qo-movement-desc">Dissolver o isolamento via perspectiva histórica</div>
+      </div>
+      <div class="qo-movement">
+        <div class="qo-movement-num">IV</div>
+        <div class="qo-movement-title">O Exercício</div>
+        <div class="qo-movement-desc">Algo concreto sem prometer transformação</div>
+      </div>
+      <div class="qo-movement">
+        <div class="qo-movement-num">V</div>
+        <div class="qo-movement-title">Quase Otimista</div>
+        <div class="qo-movement-desc">Síntese que não fecha — abre</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qo-section qo-reveal" id="capitulo1">
+    <p class="qo-section-label">Antes de comprar</p>
+    <p style="font-family:'Playfair Display',serif; font-style:italic; font-size:1.05rem; color:#c8d4e0; line-height:1.8; margin-bottom:2rem;">O Capítulo 1 está disponível gratuitamente. Leia antes de decidir.</p>
+    <a class="qo-btn-ghost" href="https://www.amazon.com.br/dp/B0H2WDTYC8" target="_blank">Ler amostra grátis na Amazon →</a>
+  </div>
+
+  <div class="qo-section qo-reveal">
+    <p class="qo-section-label">Leitores</p>
+    <div class="qo-reviews-note">
+      Os primeiros leitores estão com o livro. As impressões chegam em breve.
+    </div>
+  </div>
+
+  <div class="qo-footer qo-reveal">
+    <p class="qo-footer-title">Comece pelo que ainda está lá.</p>
+    <div class="qo-cta-group" style="justify-content:center">
+      <a class="qo-btn-primary" href="https://www.amazon.com.br/dp/B0H2WDTYC8" target="_blank">
+        Kindle — R$ 9,90
+        <small>Amazon · Kindle Unlimited</small>
+      </a>
+      <a class="qo-btn-secondary" href="https://hotmart.com/pt-br/marketplace/produtos/quase-otimista-raphael-nunes/G106063004A" target="_blank">
+        PDF — R$ 9,90
+        <small>Hotmart · offline</small>
+      </a>
+    </div>
+    <p class="qo-footer-sub">R. Nunes · @r.nunes_autor · linktr.ee/quaseotimista</p>
+  </div>
+
+  <script>
+    const reveals = document.querySelectorAll('.qo-reveal');
+    if ('IntersectionObserver' in window) {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.12 });
+      reveals.forEach(r => obs.observe(r));
+    } else {
+      reveals.forEach(r => r.classList.add('visible'));
+    }
+  </script>
+
+</body>
+</html>
